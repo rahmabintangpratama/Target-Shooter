@@ -10,6 +10,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.ImageView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityEasyCBinding
@@ -62,6 +63,12 @@ class EasyCActivity : AppCompatActivity() {
         updateScoreDisplay()
         updateTimeLeftDisplay()
         startGame()
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                showExitDialog()
+            }
+        })
     }
 
     private fun startGame() {
@@ -181,13 +188,6 @@ class EasyCActivity : AppCompatActivity() {
             }
             .setNegativeButton("No", null)
             .show()
-    }
-
-    @Deprecated("This method has been deprecated in favor of using the\n      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.\n      The OnBackPressedDispatcher controls how back button events are dispatched\n      to one or more {@link OnBackPressedCallback} objects.")
-    override fun onBackPressed() {
-        @Suppress("DEPRECATION")
-        super.onBackPressed()
-        showExitDialog()
     }
 
     override fun onDestroy() {
