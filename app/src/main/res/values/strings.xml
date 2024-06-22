@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Target Shooter</string>
+    <string name="target1">Target 1</string>
+    <string name="target2">Target 2</string>
+    <string name="target3">Target 3</string>
+    <string name="target4">Target 4</string>
+    <string name="target5">Target 5</string>
+    <string name="target6">Target 6</string>
+    <string name="slogan">Shoot them all!</string>
+    <string name="error_empty_nickname">Nickname cannot be empty</string>
+    <string name="nickname">Nickname</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="submit">Submit</string>
+    <string name="next_stage">Next Stage</string>
+    <string name="target7">Target 7</string>
+    <string name="target8">Target 8</string>
+    <string name="target9">Target 9</string>
+    <string name="target10">Target 10</string>
+    <string name="target11">Target 11</string>
+    <string name="target12">Target 12</string>
+    <string name="finish">Finish</string>
+</resources>
