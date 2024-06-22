@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.uinsuka.uas.targetshooter.databinding.ActivitySplashBinding
-import com.uinsuka.uas.targetshooter.ui.easy.EasyAActivity
+import com.uinsuka.uas.targetshooter.ui.main.MainActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -26,7 +26,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun goToMainActivity() {
-        Intent(this, EasyAActivity::class.java).also {
+        Intent(this, MainActivity::class.java).also {
             startActivity(it)
             finish()
         }

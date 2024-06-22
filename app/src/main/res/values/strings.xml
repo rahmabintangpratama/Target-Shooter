@@ -9,8 +9,6 @@
     <string name="slogan">Shoot them all!</string>
     <string name="error_empty_nickname">Nickname cannot be empty</string>
     <string name="nickname">Nickname</string>
-    <string name="male">Male</string>
-    <string name="female">Female</string>
     <string name="submit">Submit</string>
     <string name="next_stage">Next Stage</string>
     <string name="target7">Target 7</string>
@@ -20,4 +18,7 @@
     <string name="target11">Target 11</string>
     <string name="target12">Target 12</string>
     <string name="finish">Finish</string>
+    <string name="easy">Easy</string>
+    <string name="hard">Hard</string>
+    <string name="start">Start</string>
 </resources>

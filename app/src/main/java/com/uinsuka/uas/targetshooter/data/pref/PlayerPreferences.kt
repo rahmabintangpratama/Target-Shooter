@@ -5,6 +5,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
@@ -25,7 +26,8 @@ class PlayerPreferences private constructor(private val dataStore: DataStore<Pre
         return dataStore.data.map { preferences ->
             PlayerModel(
                 preferences[PLAYER_NAME] ?: "",
-                preferences[IS_LOGIN] ?: false
+                preferences[IS_LOGIN] ?: false,
+                preferences[BEST_SCORE] ?: 0
             )
         }
     }
@@ -36,12 +38,22 @@ class PlayerPreferences private constructor(private val dataStore: DataStore<Pre
         }
     }
 
+    suspend fun saveBestScore(score: Int) {
+        dataStore.edit { preferences ->
+            val currentBestScore = preferences[BEST_SCORE] ?: 0
+            if (score > currentBestScore) {
+                preferences[BEST_SCORE] = score
+            }
+        }
+    }
+
     companion object {
         @Volatile
         private var INSTANCE: PlayerPreferences? = null
 
         private val PLAYER_NAME = stringPreferencesKey("player_name")
         private val IS_LOGIN = booleanPreferencesKey("is_login")
+        private val BEST_SCORE = intPreferencesKey("best_score")
 
         fun getInstance(dataStore: DataStore<Preferences>): PlayerPreferences {
             return INSTANCE ?: synchronized(this) {

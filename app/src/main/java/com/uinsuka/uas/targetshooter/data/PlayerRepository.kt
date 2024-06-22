@@ -20,6 +20,10 @@ class PlayerRepository private constructor(
         playerPreferences.logout()
     }
 
+    suspend fun saveBestScore(score: Int) {
+        playerPreferences.saveBestScore(score)
+    }
+
     companion object {
         @Volatile
         private var instance: PlayerRepository? = null

@@ -1,5 +1,6 @@
 package com.uinsuka.uas.targetshooter.ui.easy
 
+import android.content.Intent
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
@@ -9,8 +10,11 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.ImageView
+import androidx.appcompat.app.AlertDialog
 import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityEasyCBinding
+import com.uinsuka.uas.targetshooter.ui.main.MainActivity
+import com.uinsuka.uas.targetshooter.ui.result.ResultActivity
 import kotlin.random.Random
 
 class EasyCActivity : AppCompatActivity() {
@@ -24,11 +28,16 @@ class EasyCActivity : AppCompatActivity() {
     private lateinit var soundPool: SoundPool
     private var soundId: Int = 0
     private lateinit var mediaPlayer: MediaPlayer
+    private var scoreA = 0
+    private var scoreB = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEasyCBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        scoreA = intent.getIntExtra("scoreA", 0)
+        scoreB = intent.getIntExtra("scoreB", 0)
 
         val audioAttributes = AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_GAME)
@@ -148,6 +157,37 @@ class EasyCActivity : AppCompatActivity() {
 
         mediaPlayer.pause()
         mediaPlayer.seekTo(0)
+
+        binding.btnFinish.visibility = View.VISIBLE
+        binding.btnFinish.setOnClickListener {
+            val intent = Intent(this, ResultActivity::class.java)
+            intent.putExtra("scoreA", scoreA)
+            intent.putExtra("scoreB", scoreB)
+            intent.putExtra("scoreC", score)
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    private fun showExitDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Exit Game")
+            .setMessage("Are you sure you want to go back to home? Your progress will not be saved.")
+            .setPositiveButton("Yes") { _, _ ->
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+                finish()
+            }
+            .setNegativeButton("No", null)
+            .show()
+    }
+
+    @Deprecated("This method has been deprecated in favor of using the\n      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.\n      The OnBackPressedDispatcher controls how back button events are dispatched\n      to one or more {@link OnBackPressedCallback} objects.")
+    override fun onBackPressed() {
+        @Suppress("DEPRECATION")
+        super.onBackPressed()
+        showExitDialog()
     }
 
     override fun onDestroy() {

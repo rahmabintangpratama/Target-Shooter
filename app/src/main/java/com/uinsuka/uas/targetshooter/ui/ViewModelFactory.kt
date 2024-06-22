@@ -5,7 +5,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.uinsuka.uas.targetshooter.data.PlayerRepository
 import com.uinsuka.uas.targetshooter.di.Injection
+import com.uinsuka.uas.targetshooter.ui.info.PlayerInfoViewModel
 import com.uinsuka.uas.targetshooter.ui.main.MainViewModel
+import com.uinsuka.uas.targetshooter.ui.result.ResultViewModel
 
 class ViewModelFactory(private val repository: PlayerRepository) :
     ViewModelProvider.NewInstanceFactory() {
@@ -15,6 +17,12 @@ class ViewModelFactory(private val repository: PlayerRepository) :
         return when {
             modelClass.isAssignableFrom(MainViewModel::class.java) -> {
                 MainViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(PlayerInfoViewModel::class.java) -> {
+                PlayerInfoViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(ResultViewModel::class.java) -> {
+                ResultViewModel(repository) as T
             }
 
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
