@@ -97,11 +97,11 @@
         android:contentDescription="@string/target1"
         android:src="@drawable/ic_target"
         android:visibility="gone"
-        app:layout_constraintVertical_bias="0.1"
-        app:layout_constraintBottom_toTopOf="@id/btnNextStage"
-        app:layout_constraintEnd_toStartOf="@+id/btnTarget2"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineVerticalD"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalA"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutTimeLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineVerticalC"
+        app:layout_constraintVertical_bias="0.1"
         tools:visibility="visible" />
 
     <ImageView
@@ -113,11 +113,11 @@
         android:contentDescription="@string/target2"
         android:src="@drawable/ic_target"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineVerticalD"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalB"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalA"
+        app:layout_constraintTop_toTopOf="@+id/guidelineVerticalC"
         app:layout_constraintVertical_bias="0.1"
-        app:layout_constraintBottom_toBottomOf="@id/btnNextStage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutTimeLeft"
         tools:visibility="visible" />
 
     <ImageView
@@ -129,107 +129,101 @@
         android:contentDescription="@string/target3"
         android:src="@drawable/ic_target"
         android:visibility="gone"
-        app:layout_constraintVertical_bias="0.1"
-        app:layout_constraintBottom_toTopOf="@id/btnNextStage"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineVerticalD"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnTarget2"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutTimeLeft"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalB"
+        app:layout_constraintTop_toTopOf="@+id/guidelineVerticalC"
+        app:layout_constraintVertical_bias="0.1"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/btnTarget4"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_margin="16dp"
         android:layout_weight="1"
         android:contentDescription="@string/target4"
         android:src="@drawable/ic_target"
         android:visibility="gone"
-        app:layout_constraintEnd_toStartOf="@+id/btnTarget5"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineVerticalE"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalA"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTarget1"
+        app:layout_constraintTop_toTopOf="@+id/guidelineVerticalD"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/btnTarget5"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_margin="16dp"
         android:layout_weight="1"
         android:contentDescription="@string/target5"
         android:src="@drawable/ic_target"
         android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTarget2"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineVerticalE"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalB"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalA"
+        app:layout_constraintTop_toTopOf="@+id/guidelineVerticalD"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/btnTarget6"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_margin="16dp"
         android:layout_weight="1"
         android:contentDescription="@string/target6"
         android:src="@drawable/ic_target"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineVerticalE"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnTarget5"
-        app:layout_constraintTop_toBottomOf="@+id/btnTarget3"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalB"
+        app:layout_constraintTop_toTopOf="@+id/guidelineVerticalD"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/btnTarget7"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_margin="16dp"
         android:layout_weight="1"
         android:contentDescription="@string/target7"
         android:src="@drawable/ic_target"
         android:visibility="gone"
-        app:layout_constraintEnd_toStartOf="@+id/btnTarget8"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineVerticalF"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalA"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTarget4"
+        app:layout_constraintTop_toTopOf="@+id/guidelineVerticalE"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/btnTarget8"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="32dp"
         android:layout_weight="1"
+        android:layout_margin="16dp"
         android:contentDescription="@string/target8"
         android:src="@drawable/ic_target"
         android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTarget5"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineVerticalF"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalB"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalA"
+        app:layout_constraintTop_toTopOf="@+id/guidelineVerticalE"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/btnTarget9"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_margin="16dp"
         android:layout_weight="1"
         android:contentDescription="@string/target9"
         android:src="@drawable/ic_target"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineVerticalF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnTarget8"
-        app:layout_constraintTop_toBottomOf="@+id/btnTarget6"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalB"
+        app:layout_constraintTop_toTopOf="@+id/guidelineVerticalE"
         tools:visibility="visible" />
 
     <Button
@@ -247,5 +241,59 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:visibility="gone"
         tools:visibility="visible"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalA"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.33"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalB"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.66"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalC"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.23"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalD"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.41"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalE"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.58"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalF"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.75"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
