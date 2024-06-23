@@ -10,7 +10,10 @@
     <LinearLayout
         android:id="@+id/linearLayoutBestScore"
         android:layout_width="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
@@ -22,7 +25,7 @@
             android:id="@+id/tvBestScore"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="32sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:fontFamily="@font/jockey_one_regular"
@@ -42,7 +45,10 @@
     <LinearLayout
         android:id="@+id/linearLayoutGreeting"
         android:layout_width="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
@@ -56,7 +62,7 @@
             android:id="@+id/tvHi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="32sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:fontFamily="@font/jockey_one_regular"
@@ -67,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="8dp"
-            android:textSize="32sp"
+            android:textSize="24sp"
             android:textColor="@color/light_orange"
             android:fontFamily="@font/workbench_regular"
             android:text="@string/nickname"/>
@@ -83,7 +89,7 @@
         app:layout_constraintTop_toBottomOf="@id/linearLayoutGreeting"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="32sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textAlignment="center"
@@ -108,7 +114,7 @@
         app:layout_constraintTop_toBottomOf="@id/ivLogo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="40sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textAlignment="center"
@@ -126,11 +132,11 @@
         app:layout_constraintTop_toBottomOf="@id/tvAppName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="32sp"
+        android:textSize="24sp"
         android:textColor="@color/white"
         android:textAlignment="center"
         android:fontFamily="@font/jockey_one_regular"
-        android:text="Choose your difficulty:"/>
+        android:text="Select your difficulty level:"/>
 
     <RadioGroup
         android:id="@+id/rgDifficulty"
@@ -147,7 +153,7 @@
             android:layout_height="wrap_content"
             android:text="@string/easy"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="16sp"
             android:fontFamily="@font/jockey_one_regular"/>
 
         <RadioButton
@@ -157,7 +163,7 @@
             android:text="@string/hard"
             android:textColor="@color/white"
             android:layout_marginStart="16dp"
-            android:textSize="24sp"
+            android:textSize="16sp"
             android:fontFamily="@font/jockey_one_regular"/>
     </RadioGroup>
 

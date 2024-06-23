@@ -27,6 +27,7 @@ class EasyAActivity : AppCompatActivity() {
     private var timeLeft = 30
     private lateinit var soundPool: SoundPool
     private var soundId: Int = 0
+    private var clickSoundId: Int = 0
     private lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,14 +43,15 @@ class EasyAActivity : AppCompatActivity() {
             .setMaxStreams(1)
             .setAudioAttributes(audioAttributes)
             .build()
-        soundId = soundPool.load(this, R.raw.caulk_gun, 1)
+        soundId = soundPool.load(this, R.raw.target_hit, 1)
+        clickSoundId = soundPool.load(this, R.raw.click_button, 1)
 
         targets = listOf(
             binding.btnTarget1, binding.btnTarget2, binding.btnTarget3,
             binding.btnTarget4, binding.btnTarget5, binding.btnTarget6
         )
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.game_music_loop)
+        mediaPlayer = MediaPlayer.create(this, R.raw.start_game)
         mediaPlayer.isLooping = true
 
         updateScoreDisplay()
@@ -159,6 +161,7 @@ class EasyAActivity : AppCompatActivity() {
 
         binding.btnNextStage.visibility = View.VISIBLE
         binding.btnNextStage.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
             val intent = Intent(this, EasyBActivity::class.java)
             intent.putExtra("scoreA", score)
             startActivity(intent)
@@ -178,6 +181,20 @@ class EasyAActivity : AppCompatActivity() {
             }
             .setNegativeButton("No", null)
             .show()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.pause()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!mediaPlayer.isPlaying) {
+            mediaPlayer.start()
+        }
     }
 
     override fun onDestroy() {

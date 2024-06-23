@@ -28,6 +28,7 @@ class EasyCActivity : AppCompatActivity() {
     private var timeLeft = 30
     private lateinit var soundPool: SoundPool
     private var soundId: Int = 0
+    private var clickSoundId: Int = 0
     private lateinit var mediaPlayer: MediaPlayer
     private var scoreA = 0
     private var scoreB = 0
@@ -48,7 +49,8 @@ class EasyCActivity : AppCompatActivity() {
             .setMaxStreams(1)
             .setAudioAttributes(audioAttributes)
             .build()
-        soundId = soundPool.load(this, R.raw.caulk_gun, 1)
+        soundId = soundPool.load(this, R.raw.target_hit, 1)
+        clickSoundId = soundPool.load(this, R.raw.click_button, 1)
 
         targets = listOf(
             binding.btnTarget1, binding.btnTarget2, binding.btnTarget3,
@@ -57,7 +59,7 @@ class EasyCActivity : AppCompatActivity() {
             binding.btnTarget10, binding.btnTarget11, binding.btnTarget12
         )
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.game_music_loop)
+        mediaPlayer = MediaPlayer.create(this, R.raw.start_game)
         mediaPlayer.isLooping = true
 
         updateScoreDisplay()
@@ -167,6 +169,7 @@ class EasyCActivity : AppCompatActivity() {
 
         binding.btnFinish.visibility = View.VISIBLE
         binding.btnFinish.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
             val intent = Intent(this, ResultActivity::class.java)
             intent.putExtra("scoreA", scoreA)
             intent.putExtra("scoreB", scoreB)
@@ -188,6 +191,20 @@ class EasyCActivity : AppCompatActivity() {
             }
             .setNegativeButton("No", null)
             .show()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.pause()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!mediaPlayer.isPlaying) {
+            mediaPlayer.start()
+        }
     }
 
     override fun onDestroy() {

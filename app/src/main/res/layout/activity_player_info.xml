@@ -47,6 +47,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNickname"
+        android:textAlignment="center"
+        android:gravity="center"
         android:textColorHint="@color/white">
 
         <com.uinsuka.uas.targetshooter.ui.custom.NicknameEditText
@@ -58,6 +60,7 @@
             android:hint="@string/nickname"
             android:textSize="16sp"
             android:textColor="@color/white"
+            android:textAlignment="center"
             android:fontFamily="@font/jockey_one_regular"
             android:inputType="textPersonName"
             android:gravity="center"
