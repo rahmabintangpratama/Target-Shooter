@@ -60,19 +60,18 @@
 
         <TextView
             android:id="@+id/tvHi"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:fontFamily="@font/jockey_one_regular"
-            android:text="Hi,"/>
+            android:text="Hi, "/>
 
         <TextView
             android:id="@+id/tvNickname"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="8dp"
             android:textSize="24sp"
             android:textColor="@color/light_orange"
             android:fontFamily="@font/workbench_regular"
