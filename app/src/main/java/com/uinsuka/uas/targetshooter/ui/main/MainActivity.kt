@@ -11,6 +11,7 @@ import androidx.activity.viewModels
 import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityMainBinding
 import com.uinsuka.uas.targetshooter.ui.ViewModelFactory
+import com.uinsuka.uas.targetshooter.ui.about.AboutActivity
 import com.uinsuka.uas.targetshooter.ui.easy.EasyAActivity
 import com.uinsuka.uas.targetshooter.ui.hard.HardAActivity
 import com.uinsuka.uas.targetshooter.ui.info.PlayerInfoActivity
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         ViewModelFactory.getInstance(this)
     }
     private lateinit var soundPool: SoundPool
+    private var clickSoundId: Int = 0
     private var startSoundId: Int = 0
     private lateinit var mediaPlayer: MediaPlayer
 
@@ -47,6 +49,7 @@ class MainActivity : AppCompatActivity() {
             .setMaxStreams(1)
             .setAudioAttributes(audioAttributes)
             .build()
+        clickSoundId = soundPool.load(this, R.raw.click_button, 1)
         startSoundId = soundPool.load(this, R.raw.start_button, 1)
 
         mediaPlayer = MediaPlayer.create(this, R.raw.home)
@@ -71,6 +74,11 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this@MainActivity, "You have to choose the difficulty level", Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+
+        binding.tvAbout.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            startActivity(Intent(this, AboutActivity::class.java))
         }
     }
 

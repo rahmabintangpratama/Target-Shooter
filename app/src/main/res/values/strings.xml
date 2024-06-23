@@ -21,4 +21,12 @@
     <string name="easy">Easy</string>
     <string name="hard">Hard</string>
     <string name="start">Start</string>
+    <string name="bintang_name">Rahma Bintang Pratama</string>
+    <string name="bintang_nim">21106050006</string>
+    <string name="student_status">Bachelor\'s Program in Informatics - Faculty of Science and Technology - Sunan Kalijaga State Islamic University</string>
+    <string name="ghibran_name">Ghibran Tsamara Alvaridzy Ramadhan</string>
+    <string name="ghibran_nim">21106050092</string>
+    <string name="indra_name">Indra Arya Slamet Praditya</string>
+    <string name="indra_nim">21106050002</string>
+    <string name="our_great_teams">Our Great Teams</string>
 </resources>
