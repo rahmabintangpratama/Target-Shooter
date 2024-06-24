@@ -1,13 +1,19 @@
 package com.uinsuka.uas.targetshooter.ui.hard
 
+import android.content.Context
 import android.content.Intent
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.os.VibrationEffect
+import android.os.Vibrator
+import android.os.VibratorManager
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.activity.OnBackPressedCallback
@@ -32,6 +38,7 @@ class HardCActivity : AppCompatActivity() {
     private var clickSoundId: Int = 0
     private var bombSoundId: Int = 0
     private lateinit var mediaPlayer: MediaPlayer
+    private lateinit var vibrator: Vibrator
     private var scoreA = 0
     private var scoreB = 0
 
@@ -64,6 +71,14 @@ class HardCActivity : AppCompatActivity() {
 
         mediaPlayer = MediaPlayer.create(this, R.raw.start_game)
         mediaPlayer.isLooping = true
+
+        vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val vibratorManager = getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+            vibratorManager.defaultVibrator
+        } else {
+            @Suppress("DEPRECATION")
+            getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        }
 
         updateScoreDisplay()
         updateTimeLeftDisplay()
@@ -154,6 +169,13 @@ class HardCActivity : AppCompatActivity() {
             score -= 2
             if (score < 0) score = 0
             soundPool.play(bombSoundId, 1f, 1f, 1, 0, 1f)
+
+            if (vibrator.hasVibrator()) {
+                Log.d("HardAActivity", "Attempting to vibrate")
+                vibrator.vibrate(VibrationEffect.createOneShot(1001, VibrationEffect.DEFAULT_AMPLITUDE))
+            } else {
+                Log.d("HardAActivity", "Device does not support vibration")
+            }
         } else {
             target.setImageResource(R.drawable.ic_target_broken)
             score++

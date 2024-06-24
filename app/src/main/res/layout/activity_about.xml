@@ -20,7 +20,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="@string/our_great_teams"
+            android:text="@string/our_great_team"
             android:textSize="24sp"
             android:textColor="@color/white"
             android:textAlignment="center"
