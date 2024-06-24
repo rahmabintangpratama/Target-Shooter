@@ -25,7 +25,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:fontFamily="@font/bungee_spice_regular"
-            android:text="STAGE 2"/>
+            android:text="@string/stage_2"/>
     </LinearLayout>
 
     <LinearLayout
@@ -46,7 +46,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:fontFamily="@font/bungee_spice_regular"
-            android:text="Score:"/>
+            android:text="@string/score"/>
 
         <TextView
             android:id="@+id/tvScoreValue"
@@ -55,7 +55,8 @@
             android:paddingStart="8dp"
             android:textSize="16sp"
             android:fontFamily="@font/bungee_spice_regular"
-            android:text="Score Value"/>
+            android:text="@string/score_value"
+            tools:ignore="RtlSymmetry" />
     </LinearLayout>
 
     <LinearLayout
@@ -76,7 +77,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:fontFamily="@font/bungee_spice_regular"
-            android:text="Time Left:"/>
+            android:text="@string/time_left"/>
 
         <TextView
             android:id="@+id/tvTimeLeftValue"
@@ -85,7 +86,8 @@
             android:paddingStart="8dp"
             android:textSize="16sp"
             android:fontFamily="@font/bungee_spice_regular"
-            android:text="Time Left Value"/>
+            android:text="@string/time_left_value"
+            tools:ignore="RtlSymmetry" />
     </LinearLayout>
 
     <ImageView
@@ -231,7 +233,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_weight="1"
-        android:contentDescription="Gun Actor 1"
+        android:contentDescription="@string/gun_actor_1"
         android:src="@drawable/ic_gun_actor"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -286,7 +288,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_weight="1"
-        android:contentDescription="Gun Actor 2"
+        android:contentDescription="@string/gun_actor_2"
         android:src="@drawable/ic_gun_actor"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -341,7 +343,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_weight="1"
-        android:contentDescription="Gun Actor 3"
+        android:contentDescription="@string/gun_actor_3"
         android:src="@drawable/ic_gun_actor"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -391,7 +393,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnNextStage"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
@@ -401,6 +403,7 @@
         android:text="@string/next_stage"
         android:textColor="@color/white"
         android:textSize="24sp"
+        app:cornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

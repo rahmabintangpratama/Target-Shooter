@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@id/ivLogo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Insert your nickname:"
+        android:text="@string/insert_nickname"
         android:letterSpacing="0.1"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -67,7 +67,7 @@
             tools:ignore="SpeakableTextPresentCheck"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSubmit"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
@@ -77,6 +77,7 @@
         android:text="@string/submit"
         android:textColor="@color/white"
         android:textSize="24sp"
+        app:cornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/NicknameEditTextLayout"

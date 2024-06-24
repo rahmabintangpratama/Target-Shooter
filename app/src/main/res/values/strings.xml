@@ -29,4 +29,23 @@
     <string name="indra_name">Indra Arya Slamet Praditya</string>
     <string name="indra_nim">21106050002</string>
     <string name="our_great_team">Our Great Team</string>
+    <string name="best_score">Best Score:</string>
+    <string name="zero">0</string>
+    <string name="hi">Hi,</string>
+    <string name="welcome">Welcome to</string>
+    <string name="select_difficulty">Select your difficulty level:</string>
+    <string name="about">About</string>
+    <string name="stage_1">STAGE 1</string>
+    <string name="score">Score:</string>
+    <string name="score_value">Score Value</string>
+    <string name="time_left">Time Left:</string>
+    <string name="time_left_value">Time Left Value</string>
+    <string name="gun_actor_1">Gun Actor 1</string>
+    <string name="gun_actor_2">Gun Actor 2</string>
+    <string name="gun_actor_3">Gun Actor 3</string>
+    <string name="stage_2">STAGE 2</string>
+    <string name="stage_3">STAGE 3</string>
+    <string name="final_score">Your final score is:</string>
+    <string name="back_to_home">Back to home</string>
+    <string name="insert_nickname">Insert your nickname:</string>
 </resources>

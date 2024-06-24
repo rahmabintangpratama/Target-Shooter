@@ -31,7 +31,7 @@
         android:textColor="@color/white"
         android:textAlignment="center"
         android:fontFamily="@font/bungee_spice_regular"
-        android:text="Your final score is:"/>
+        android:text="@string/final_score"/>
 
     <TextView
         android:id="@+id/tvFinalScoreValue"
@@ -44,18 +44,19 @@
         android:textColor="@color/white"
         android:textAlignment="center"
         android:fontFamily="@font/bungee_spice_regular"
-        android:text="0"/>
+        android:text="@string/zero"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnHome"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
         android:backgroundTint="@color/dark_orange"
         android:fontFamily="@font/jockey_one_regular"
-        android:text="Back to home"
+        android:text="@string/back_to_home"
         android:textColor="@color/white"
         android:textSize="32sp"
+        app:cornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

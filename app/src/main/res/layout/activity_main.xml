@@ -40,9 +40,9 @@
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:fontFamily="@font/jockey_one_regular"
-                android:text="Best Score:"
+                android:text="@string/best_score"
                 android:gravity="center_vertical"
-                android:drawableLeft="@drawable/ic_score_flag"/>
+                app:drawableLeftCompat="@drawable/ic_score_flag" />
 
             <TextView
                 android:id="@+id/tvBestScoreValue"
@@ -52,7 +52,8 @@
                 android:textSize="32sp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/jockey_one_regular"
-                android:text="0"/>
+                android:text="@string/zero"
+                tools:ignore="RtlSymmetry" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -80,16 +81,18 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             android:fontFamily="@font/jockey_one_regular"
-            android:text="Hi, "/>
+            android:text="@string/hi"/>
 
         <TextView
             android:id="@+id/tvNickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="8dp"
             android:textSize="24sp"
             android:textColor="@color/light_orange"
             android:fontFamily="@font/workbench_regular"
-            android:text="@string/nickname"/>
+            android:text="@string/nickname"
+            tools:ignore="RtlSymmetry" />
     </LinearLayout>
 
     <TextView
@@ -107,7 +110,7 @@
         android:textColor="@color/white"
         android:textAlignment="center"
         android:fontFamily="@font/jockey_one_regular"
-        android:text="Welcome to"/>
+        android:text="@string/welcome"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivLogo"
@@ -149,7 +152,7 @@
         android:textColor="@color/white"
         android:textAlignment="center"
         android:fontFamily="@font/jockey_one_regular"
-        android:text="Select your difficulty level:"/>
+        android:text="@string/select_difficulty"/>
 
     <RadioGroup
         android:id="@+id/rgDifficulty"
@@ -180,7 +183,7 @@
             android:fontFamily="@font/jockey_one_regular"/>
     </RadioGroup>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnStart"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
@@ -190,6 +193,7 @@
         android:text="@string/start"
         android:textColor="@color/white"
         android:textSize="32sp"
+        app:cornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rgDifficulty"/>
@@ -200,7 +204,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:fontFamily="@font/jockey_one_regular"
-        android:text="About"
+        android:text="@string/about"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="16sp"
