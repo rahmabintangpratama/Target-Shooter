@@ -20,6 +20,8 @@ import kotlin.random.Random
 class EasyBActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEasyBBinding
     private lateinit var targets: List<ImageView>
+    private lateinit var gunActors: List<ImageView>
+    private lateinit var lasers: List<View>
     private var score = 0
     private var isGameRunning = false
     private val handler = Handler(Looper.getMainLooper())
@@ -55,6 +57,16 @@ class EasyBActivity : AppCompatActivity() {
             binding.btnTarget7, binding.btnTarget8, binding.btnTarget9
         )
 
+        gunActors = listOf(
+            binding.gunActor1, binding.gunActor2, binding.gunActor3
+        )
+
+        lasers = listOf(
+            binding.laser1, binding.laser2, binding.laser3,
+            binding.laser4, binding.laser5, binding.laser6,
+            binding.laser7, binding.laser8, binding.laser9
+        )
+
         mediaPlayer = MediaPlayer.create(this, R.raw.start_game)
         mediaPlayer.isLooping = true
 
@@ -75,12 +87,17 @@ class EasyBActivity : AppCompatActivity() {
         timeLeft = 30
         updateScoreDisplay()
         updateTimeLeftDisplay()
+        showGunActors()
         showRandomTarget()
         startTimer()
 
         if (!mediaPlayer.isPlaying) {
             mediaPlayer.start()
         }
+    }
+
+    private fun showGunActors() {
+        gunActors.forEach { it.visibility = View.VISIBLE }
     }
 
     private fun startTimer() {
@@ -99,6 +116,8 @@ class EasyBActivity : AppCompatActivity() {
 
     private fun showRandomTarget() {
         if (!isGameRunning) return
+
+        hideLasers()
 
         val randomTarget = getRandomTarget()
         randomTarget.setImageResource(R.drawable.ic_target)
@@ -141,9 +160,18 @@ class EasyBActivity : AppCompatActivity() {
 
         soundPool.play(soundId, 1f, 1f, 1, 0, 1f)
 
+        val laserIndex = targets.indexOf(target)
+        if (laserIndex != -1) {
+            lasers[laserIndex].visibility = View.VISIBLE
+        }
+
         handler.postDelayed({
             target.visibility = View.GONE
             target.setImageResource(R.drawable.ic_target)
+
+            if (laserIndex != -1) {
+                lasers[laserIndex].visibility = View.GONE
+            }
         }, 200)
     }
 
@@ -160,6 +188,9 @@ class EasyBActivity : AppCompatActivity() {
         handler.removeCallbacksAndMessages(null)
         targets.forEach { it.visibility = View.VISIBLE }
 
+        hideGunActors()
+        hideLasers()
+
         mediaPlayer.pause()
         mediaPlayer.seekTo(0)
 
@@ -172,6 +203,14 @@ class EasyBActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    private fun hideGunActors() {
+        gunActors.forEach { it.visibility = View.GONE }
+    }
+
+    private fun hideLasers() {
+        lasers.forEach { it.visibility = View.GONE }
     }
 
     private fun showExitDialog() {

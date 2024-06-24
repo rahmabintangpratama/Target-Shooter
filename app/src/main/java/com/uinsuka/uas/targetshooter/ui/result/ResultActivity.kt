@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
-import androidx.appcompat.app.AlertDialog
 import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityResultBinding
 import com.uinsuka.uas.targetshooter.ui.ViewModelFactory
@@ -63,23 +62,12 @@ class ResultActivity : AppCompatActivity() {
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                showExitDialog()
-            }
-        })
-    }
-
-    private fun showExitDialog() {
-        AlertDialog.Builder(this)
-            .setTitle("Exit Game")
-            .setMessage("Are you sure you want to go back to home? Your progress will not be saved.")
-            .setPositiveButton("Yes") { _, _ ->
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this@ResultActivity, MainActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
                 finish()
             }
-            .setNegativeButton("No", null)
-            .show()
+        })
     }
 
     override fun onPause() {

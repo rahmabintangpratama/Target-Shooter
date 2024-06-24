@@ -226,6 +226,171 @@
         app:layout_constraintTop_toTopOf="@+id/guidelineVerticalE"
         tools:visibility="visible" />
 
+    <ImageView
+        android:id="@+id/gunActor1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:contentDescription="Gun Actor 1"
+        android:src="@drawable/ic_gun_actor"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalA"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/laser7"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/gunActor1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnTarget7"
+        android:background="@drawable/round_laser"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/laser4"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/gunActor1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnTarget4"
+        android:background="@drawable/round_laser"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/laser1"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/gunActor1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnTarget1"
+        android:background="@drawable/round_laser"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/gunActor2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:contentDescription="Gun Actor 2"
+        android:src="@drawable/ic_gun_actor"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalB"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalA"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/laser8"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_laser"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/gunActor1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalB"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalA"
+        app:layout_constraintTop_toTopOf="@+id/btnTarget8"
+        tools:visibility="visible">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/laser5"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_laser"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/gunActor1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalB"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalA"
+        app:layout_constraintTop_toTopOf="@+id/btnTarget5"
+        tools:visibility="visible">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/laser2"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_laser"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/gunActor1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalB"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalA"
+        app:layout_constraintTop_toTopOf="@+id/btnTarget2"
+        tools:visibility="visible">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/gunActor3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:contentDescription="Gun Actor 3"
+        android:src="@drawable/ic_gun_actor"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalB"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/laser9"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_laser"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/gunActor1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalB"
+        app:layout_constraintTop_toTopOf="@+id/btnTarget9"
+        tools:visibility="visible">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/laser6"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_laser"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/gunActor1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalB"
+        app:layout_constraintTop_toTopOf="@+id/btnTarget6"
+        tools:visibility="visible">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/laser3"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_laser"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/gunActor1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalB"
+        app:layout_constraintTop_toTopOf="@+id/btnTarget3"
+        tools:visibility="visible">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <Button
         android:id="@+id/btnNextStage"
         android:layout_width="230dp"

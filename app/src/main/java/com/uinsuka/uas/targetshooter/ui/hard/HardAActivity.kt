@@ -26,6 +26,8 @@ import kotlin.random.Random
 class HardAActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHardABinding
     private lateinit var targets: List<ImageView>
+    private lateinit var gunActors: List<ImageView>
+    private lateinit var lasers: List<View>
     private var score = 0
     private var isGameRunning = false
     private var isBomb = false
@@ -61,6 +63,15 @@ class HardAActivity : AppCompatActivity() {
             binding.btnTarget4, binding.btnTarget5, binding.btnTarget6
         )
 
+        gunActors = listOf(
+            binding.gunActor1, binding.gunActor2, binding.gunActor3
+        )
+
+        lasers = listOf(
+            binding.laser1, binding.laser2, binding.laser3,
+            binding.laser4, binding.laser5, binding.laser6
+        )
+
         mediaPlayer = MediaPlayer.create(this, R.raw.start_game)
         mediaPlayer.isLooping = true
 
@@ -89,12 +100,17 @@ class HardAActivity : AppCompatActivity() {
         timeLeft = 30
         updateScoreDisplay()
         updateTimeLeftDisplay()
+        showGunActors()
         showRandomTarget()
         startTimer()
 
         if (!mediaPlayer.isPlaying) {
             mediaPlayer.start()
         }
+    }
+
+    private fun showGunActors() {
+        gunActors.forEach { it.visibility = View.VISIBLE }
     }
 
     private fun startTimer() {
@@ -113,6 +129,8 @@ class HardAActivity : AppCompatActivity() {
 
     private fun showRandomTarget() {
         if (!isGameRunning) return
+
+        hideLasers()
 
         val randomTarget = getRandomTarget()
         isBomb = Random.nextInt(100) < 30
@@ -176,12 +194,22 @@ class HardAActivity : AppCompatActivity() {
 
         updateScoreDisplay()
 
+        val laserIndex = targets.indexOf(target)
+        if (laserIndex != -1) {
+            lasers[laserIndex].visibility = View.VISIBLE
+        }
+
         handler.postDelayed({
             target.visibility = View.GONE
+
             if (isBomb) {
                 target.setImageResource(R.drawable.ic_bomb)
             } else {
                 target.setImageResource(R.drawable.ic_target)
+            }
+
+            if (laserIndex != -1) {
+                lasers[laserIndex].visibility = View.GONE
             }
         }, 200)
     }
@@ -200,6 +228,9 @@ class HardAActivity : AppCompatActivity() {
         handler.removeCallbacksAndMessages(null)
         targets.forEach { it.visibility = View.VISIBLE }
 
+        hideGunActors()
+        hideLasers()
+
         mediaPlayer.pause()
         mediaPlayer.seekTo(0)
 
@@ -211,6 +242,14 @@ class HardAActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    private fun hideGunActors() {
+        gunActors.forEach { it.visibility = View.GONE }
+    }
+
+    private fun hideLasers() {
+        lasers.forEach { it.visibility = View.GONE }
     }
 
     private fun showExitDialog() {
