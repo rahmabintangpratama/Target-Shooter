@@ -16,6 +16,7 @@ import com.uinsuka.uas.targetshooter.ui.about.AboutActivity
 import com.uinsuka.uas.targetshooter.ui.easy.EasyAActivity
 import com.uinsuka.uas.targetshooter.ui.hard.HardAActivity
 import com.uinsuka.uas.targetshooter.ui.info.PlayerInfoActivity
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -87,8 +88,8 @@ class MainActivity : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (backPressedTime + backPressedInterval > System.currentTimeMillis()) {
-                    finish()
-                    return
+                    finishAffinity()
+                    exitProcess(0)
                 } else {
                     Toast.makeText(this@MainActivity, "Press once more to exit", Toast.LENGTH_SHORT).show()
                 }
