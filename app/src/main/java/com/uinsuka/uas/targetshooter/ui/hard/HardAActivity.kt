@@ -254,8 +254,8 @@ class HardAActivity : AppCompatActivity() {
 
     private fun showExitDialog() {
         AlertDialog.Builder(this)
-            .setTitle("Exit Game")
-            .setMessage("Are you sure you want to go back to home? Your progress will not be saved.")
+            .setTitle("End Current Game")
+            .setMessage("Are you sure you want to end the game?\nYour progress will not be saved.")
             .setPositiveButton("Yes") { _, _ ->
                 val intent = Intent(this, MainActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK

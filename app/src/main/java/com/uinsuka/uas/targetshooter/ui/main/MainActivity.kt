@@ -7,6 +7,7 @@ import android.media.SoundPool
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityMainBinding
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by viewModels {
         ViewModelFactory.getInstance(this)
     }
+    private var backPressedTime: Long = 0
+    private val backPressedInterval: Long = 2000
     private lateinit var soundPool: SoundPool
     private var clickSoundId: Int = 0
     private var startSoundId: Int = 0
@@ -80,6 +83,18 @@ class MainActivity : AppCompatActivity() {
             soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
             startActivity(Intent(this, AboutActivity::class.java))
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (backPressedTime + backPressedInterval > System.currentTimeMillis()) {
+                    finish()
+                    return
+                } else {
+                    Toast.makeText(this@MainActivity, "Press once more to exit", Toast.LENGTH_SHORT).show()
+                }
+                backPressedTime = System.currentTimeMillis()
+            }
+        })
     }
 
     override fun onPause() {
