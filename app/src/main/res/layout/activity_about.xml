@@ -12,6 +12,56 @@
         android:background="@color/sodalite_blue"
         tools:context=".ui.about.AboutActivity">
 
+        <ImageView
+            android:id="@+id/ivColorfulLamp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_colorful_lamp"
+            android:contentDescription="@string/colorful_lamp"
+            android:alpha="1"/>
+
+        <ImageView
+            android:id="@+id/ivNightCarnival1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ivNightCarnival2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_night_carnival_background"
+            android:contentDescription="@string/night_carnival"
+            android:alpha="0.3"/>
+
+        <ImageView
+            android:id="@+id/ivNightCarnival2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintTop_toBottomOf="@id/ivNightCarnival1"
+            app:layout_constraintBottom_toTopOf="@id/ivNightCarnival3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_night_carnival_background"
+            android:contentDescription="@string/night_carnival"
+            android:alpha="0.3"/>
+
+        <ImageView
+            android:id="@+id/ivNightCarnival3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_night_carnival_background"
+            android:contentDescription="@string/night_carnival"
+            android:alpha="0.3"/>
+
         <TextView
             android:id="@+id/tvTeam"
             android:layout_width="wrap_content"

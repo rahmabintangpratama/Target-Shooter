@@ -8,6 +8,18 @@
     tools:context=".ui.result.ResultActivity">
 
     <ImageView
+        android:id="@+id/ivColorfulLamp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_colorful_lamp"
+        android:contentDescription="@string/colorful_lamp"
+        android:alpha="1"/>
+
+    <ImageView
         android:id="@+id/ivNightCarnival"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -17,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ic_night_carnival_background"
         android:contentDescription="@string/night_carnival"
-        android:alpha="0.2"/>
+        android:alpha="0.3"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivTargetBroken"
