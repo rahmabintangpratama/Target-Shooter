@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import com.uinsuka.uas.targetshooter.databinding.ActivitySplashBinding
-import com.uinsuka.uas.targetshooter.ui.main.MainActivity
+import com.uinsuka.uas.targetshooter.ui.welcome.WelcomeActivity
 import kotlin.system.exitProcess
 
 @SuppressLint("CustomSplashScreen")
@@ -32,7 +32,7 @@ class SplashActivity : AppCompatActivity() {
             showUnsupportedVersionDialog()
         } else {
             Handler(Looper.getMainLooper()).postDelayed({
-                goToMainActivity()
+                goToWelcomeActivity()
             }, SPLASH_DELAY)
         }
 
@@ -65,8 +65,8 @@ class SplashActivity : AppCompatActivity() {
         }, CLOSE_DELAY)
     }
 
-    private fun goToMainActivity() {
-        Intent(this, MainActivity::class.java).also {
+    private fun goToWelcomeActivity() {
+        Intent(this, WelcomeActivity::class.java).also {
             startActivity(it)
             finish()
         }

@@ -8,6 +8,7 @@ import com.uinsuka.uas.targetshooter.di.Injection
 import com.uinsuka.uas.targetshooter.ui.info.PlayerInfoViewModel
 import com.uinsuka.uas.targetshooter.ui.main.MainViewModel
 import com.uinsuka.uas.targetshooter.ui.result.ResultViewModel
+import com.uinsuka.uas.targetshooter.ui.welcome.WelcomeViewModel
 
 class ViewModelFactory(private val repository: PlayerRepository) :
     ViewModelProvider.NewInstanceFactory() {
@@ -23,6 +24,9 @@ class ViewModelFactory(private val repository: PlayerRepository) :
             }
             modelClass.isAssignableFrom(ResultViewModel::class.java) -> {
                 ResultViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(WelcomeViewModel::class.java) -> {
+                WelcomeViewModel(repository) as T
             }
 
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)

@@ -50,4 +50,12 @@
     <string name="insert_nickname">Insert your nickname:</string>
     <string name="night_carnival">Night Carnival</string>
     <string name="colorful_lamp">Colorful Lamp</string>
+    <string name="operator">Operator</string>
+    <string name="next">Next ⨠⨠⨠</string>
+    <string name="skip">Skip Intro ⨠⨠⨠</string>
+    <string name="message_1">Hi, my name\'s Agus. I\'m the operator for the Target Shooter game at this night carnival. This game really grabs the attention of the visitors here.</string>
+    <string name="message_2">You seem unsure about which game to play. Is this your first time here? Maybe you could try the Target Shooter game first. I\'m sure you\'ll like it.</string>
+    <string name="message_3">This game is pretty easy. You just need to hit the visible targets. The targets will pop up and disappear repeatedly. You need to stay focused to hit them.</string>
+    <string name="message_4">Here we have two game modes. There are Easy mode and Hard mode. In Easy mode, you just need to hit the targets as I mentioned earlier. However, in Hard mode, you have to be careful because the targets will move faster and there are also bombs that can reduce your points. Remember, for each target you hit, you will get one point, and for each bomb you hit, you will lose two points. So, be careful and have fun!</string>
+    <string name="lets_play">Let\'s Play ⨠⨠⨠</string>
 </resources>

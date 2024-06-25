@@ -7,16 +7,22 @@ import android.media.SoundPool
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.viewModels
 import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityPlayerInfoBinding
 import com.uinsuka.uas.targetshooter.ui.ViewModelFactory
 import com.uinsuka.uas.targetshooter.ui.custom.NicknameEditText
 import com.uinsuka.uas.targetshooter.ui.main.MainActivity
+import kotlin.system.exitProcess
 
 class PlayerInfoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPlayerInfoBinding
-    private lateinit var viewModel: PlayerInfoViewModel
+    private val viewModel: PlayerInfoViewModel by viewModels {
+        ViewModelFactory.getInstance(this)
+    }
+    private var backPressedTime: Long = 0
+    private val backPressedInterval: Long = 2000
     private lateinit var nicknameEditText: NicknameEditText
     private lateinit var soundPool: SoundPool
     private var clickSoundId: Int = 0
@@ -44,8 +50,6 @@ class PlayerInfoActivity : AppCompatActivity() {
             mediaPlayer.start()
         }
 
-        viewModel = ViewModelProvider(this, ViewModelFactory.getInstance(this))[PlayerInfoViewModel::class.java]
-
         binding.btnSubmit.setOnClickListener {
             soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
             val nickname = binding.NicknameEditText.text.toString()
@@ -68,6 +72,18 @@ class PlayerInfoActivity : AppCompatActivity() {
                 }
             }
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (backPressedTime + backPressedInterval > System.currentTimeMillis()) {
+                    finishAffinity()
+                    exitProcess(0)
+                } else {
+                    Toast.makeText(this@PlayerInfoActivity, "Press once more to exit", Toast.LENGTH_SHORT).show()
+                }
+                backPressedTime = System.currentTimeMillis()
+            }
+        })
     }
 
     override fun onPause() {
