@@ -1,5 +1,7 @@
 package com.uinsuka.uas.targetshooter.ui.main
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.content.Intent
 import android.media.AudioAttributes
 import android.media.MediaPlayer
@@ -34,6 +36,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val rbScaleX = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.1f)
+        val rbScaleY = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.1f)
+        val easyAnimator = ObjectAnimator.ofPropertyValuesHolder(binding.rbEasy, rbScaleX, rbScaleY).apply {
+            duration = 800
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }
+        easyAnimator.start()
+        val hardAnimator = ObjectAnimator.ofPropertyValuesHolder(binding.rbHard, rbScaleX, rbScaleY).apply {
+            duration = 800
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }
+        hardAnimator.start()
+
+        val scaleX = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.2f)
+        val scaleY = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.2f)
+        val aboutAnimator = ObjectAnimator.ofPropertyValuesHolder(binding.tvAbout, scaleX, scaleY).apply {
+            duration = 800
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }
+        aboutAnimator.start()
 
         viewModel.getSession().observe(this) { player ->
             if (!player.isLogin) {

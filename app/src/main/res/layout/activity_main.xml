@@ -191,6 +191,8 @@
             android:id="@+id/rbEasy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:text="@string/easy"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -200,9 +202,10 @@
             android:id="@+id/rbHard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:text="@string/hard"
             android:textColor="@color/white"
-            android:layout_marginStart="16dp"
             android:textSize="16sp"
             android:fontFamily="@font/jockey_one_regular"/>
     </RadioGroup>

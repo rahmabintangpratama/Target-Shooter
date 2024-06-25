@@ -1,5 +1,7 @@
 package com.uinsuka.uas.targetshooter.ui.result
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.content.Intent
 import android.media.AudioAttributes
 import android.media.MediaPlayer
@@ -43,6 +45,15 @@ class ResultActivity : AppCompatActivity() {
         if (!mediaPlayer.isPlaying) {
             mediaPlayer.start()
         }
+
+        val scaleX = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.2f)
+        val scaleY = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.2f)
+        val scoreAnimator = ObjectAnimator.ofPropertyValuesHolder(binding.tvFinalScoreValue, scaleX, scaleY).apply {
+            duration = 800
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }
+        scoreAnimator.start()
 
         val scoreA = intent.getIntExtra("scoreA", 0)
         val scoreB = intent.getIntExtra("scoreB", 0)
