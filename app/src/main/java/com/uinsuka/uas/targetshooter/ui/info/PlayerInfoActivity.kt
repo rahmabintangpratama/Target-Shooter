@@ -13,7 +13,7 @@ import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityPlayerInfoBinding
 import com.uinsuka.uas.targetshooter.ui.ViewModelFactory
 import com.uinsuka.uas.targetshooter.ui.custom.NicknameEditText
-import com.uinsuka.uas.targetshooter.ui.main.MainActivity
+import com.uinsuka.uas.targetshooter.ui.welcome.WelcomeActivity
 import kotlin.system.exitProcess
 
 class PlayerInfoActivity : AppCompatActivity() {
@@ -61,7 +61,7 @@ class PlayerInfoActivity : AppCompatActivity() {
             if (isNicknameValid) {
                 if (nickname.isNotEmpty()) {
                     viewModel.saveSession(nickname)
-                    startActivity(Intent(this, MainActivity::class.java))
+                    startActivity(Intent(this, WelcomeActivity::class.java))
                     finish()
                 } else {
                     Toast.makeText(
