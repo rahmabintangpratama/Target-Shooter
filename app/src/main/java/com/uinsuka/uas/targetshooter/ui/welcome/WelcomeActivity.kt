@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.content.Intent
 import android.media.AudioAttributes
+import android.media.MediaPlayer
 import android.media.SoundPool
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -30,6 +31,7 @@ class WelcomeActivity : AppCompatActivity() {
     private var clickSoundId: Int = 0
     private val animationDuration: Long = 1000
     private val transitionDelay: Long = 300
+    private lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +47,13 @@ class WelcomeActivity : AppCompatActivity() {
             .setAudioAttributes(audioAttributes)
             .build()
         clickSoundId = soundPool.load(this, R.raw.click_button, 1)
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.intro)
+        mediaPlayer.isLooping = true
+
+        if (!mediaPlayer.isPlaying) {
+            mediaPlayer.start()
+        }
 
         setupViews()
         setupObservers()
@@ -219,5 +228,27 @@ class WelcomeActivity : AppCompatActivity() {
     private fun goToMainActivity() {
         startActivity(Intent(this, MainActivity::class.java))
         finish()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.pause()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!mediaPlayer.isPlaying) {
+            mediaPlayer.start()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        soundPool.release()
+        mediaPlayer.stop()
+        mediaPlayer.release()
     }
 }
