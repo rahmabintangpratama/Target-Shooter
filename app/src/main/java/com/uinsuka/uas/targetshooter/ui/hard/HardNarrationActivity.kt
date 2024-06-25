@@ -64,23 +64,43 @@ class HardNarrationActivity : AppCompatActivity() {
     private fun setupListeners() {
         binding.tvNext1.setOnClickListener {
             soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            disableNextButtons()
             showMessage(2)
         }
         binding.tvNext2.setOnClickListener {
             soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            disableNextButtons()
             showMessage(3)
         }
         binding.tvNext3.setOnClickListener {
             soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            disableNextButtons()
             showMessage(4)
         }
         binding.tvNext4.setOnClickListener {
             soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            disableNextButtons()
             goToHardAActivity()
         }
         binding.tvSkip.setOnClickListener {
             soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
             goToHardAActivity()
+        }
+    }
+
+    private fun disableNextButtons() {
+        binding.tvNext1.isClickable = false
+        binding.tvNext2.isClickable = false
+        binding.tvNext3.isClickable = false
+        binding.tvNext4.isClickable = false
+    }
+
+    private fun enableNextButton(messageNumber: Int) {
+        when (messageNumber) {
+            1 -> binding.tvNext1.isClickable = true
+            2 -> binding.tvNext2.isClickable = true
+            3 -> binding.tvNext3.isClickable = true
+            4 -> binding.tvNext4.isClickable = true
         }
     }
 
@@ -167,6 +187,10 @@ class HardNarrationActivity : AppCompatActivity() {
         if (messageNumber == 4) {
             binding.tvSkip.visibility = View.GONE
         }
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            enableNextButton(messageNumber)
+        }, animationDuration)
     }
 
     private fun hideMessage(messageNumber: Int) {
