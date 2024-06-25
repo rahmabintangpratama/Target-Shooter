@@ -6,7 +6,6 @@ import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -18,6 +17,7 @@ import android.view.View
 import android.widget.ImageView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityHardBBinding
 import com.uinsuka.uas.targetshooter.ui.main.MainActivity
@@ -81,7 +81,8 @@ class HardBActivity : AppCompatActivity() {
         mediaPlayer.isLooping = true
 
         vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val vibratorManager = getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+            val vibratorManager =
+                getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
             vibratorManager.defaultVibrator
         } else {
             @Suppress("DEPRECATION")
@@ -187,7 +188,12 @@ class HardBActivity : AppCompatActivity() {
 
             if (vibrator.hasVibrator()) {
                 Log.d("HardAActivity", "Attempting to vibrate")
-                vibrator.vibrate(VibrationEffect.createOneShot(1001, VibrationEffect.DEFAULT_AMPLITUDE))
+                vibrator.vibrate(
+                    VibrationEffect.createOneShot(
+                        1001,
+                        VibrationEffect.DEFAULT_AMPLITUDE
+                    )
+                )
             } else {
                 Log.d("HardAActivity", "Device does not support vibration")
             }

@@ -2,12 +2,12 @@ package com.uinsuka.uas.targetshooter.ui.about
 
 import android.annotation.SuppressLint
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.MotionEvent
 import android.widget.ScrollView
+import androidx.appcompat.app.AppCompatActivity
 import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityAboutBinding
 
@@ -43,6 +43,7 @@ class AboutActivity : AppCompatActivity() {
                     isUserScrolling = true
                     stopAutoScroll()
                 }
+
                 MotionEvent.ACTION_UP -> {
                     isUserScrolling = false
                     startAutoScroll()

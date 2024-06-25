@@ -6,10 +6,10 @@ import android.content.Intent
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityResultBinding
 import com.uinsuka.uas.targetshooter.ui.ViewModelFactory
@@ -48,11 +48,12 @@ class ResultActivity : AppCompatActivity() {
 
         val scaleX = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.2f)
         val scaleY = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.2f)
-        val scoreAnimator = ObjectAnimator.ofPropertyValuesHolder(binding.tvFinalScoreValue, scaleX, scaleY).apply {
-            duration = 800
-            repeatCount = ObjectAnimator.INFINITE
-            repeatMode = ObjectAnimator.REVERSE
-        }
+        val scoreAnimator =
+            ObjectAnimator.ofPropertyValuesHolder(binding.tvFinalScoreValue, scaleX, scaleY).apply {
+                duration = 800
+                repeatCount = ObjectAnimator.INFINITE
+                repeatMode = ObjectAnimator.REVERSE
+            }
         scoreAnimator.start()
 
         val scoreA = intent.getIntExtra("scoreA", 0)

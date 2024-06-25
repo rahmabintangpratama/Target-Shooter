@@ -1,4 +1,4 @@
-package com.uinsuka.uas.targetshooter.ui.welcome
+package com.uinsuka.uas.targetshooter.ui.hard
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
@@ -11,22 +11,12 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.uinsuka.uas.targetshooter.R
-import com.uinsuka.uas.targetshooter.databinding.ActivityWelcomeBinding
-import com.uinsuka.uas.targetshooter.ui.ViewModelFactory
-import com.uinsuka.uas.targetshooter.ui.info.PlayerInfoActivity
-import com.uinsuka.uas.targetshooter.ui.main.MainActivity
-import kotlin.system.exitProcess
+import com.uinsuka.uas.targetshooter.databinding.ActivityHardNarrationBinding
 
-class WelcomeActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityWelcomeBinding
-    private val viewModel: WelcomeViewModel by viewModels { ViewModelFactory.getInstance(this) }
-    private var backPressedTime: Long = 0
-    private val backPressedInterval: Long = 2000
+class HardNarrationActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityHardNarrationBinding
     private lateinit var soundPool: SoundPool
     private var clickSoundId: Int = 0
     private val animationDuration: Long = 1000
@@ -35,7 +25,7 @@ class WelcomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityWelcomeBinding.inflate(layoutInflater)
+        binding = ActivityHardNarrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val audioAttributes = AudioAttributes.Builder()
@@ -56,9 +46,7 @@ class WelcomeActivity : AppCompatActivity() {
         }
 
         setupViews()
-        setupObservers()
         setupListeners()
-        setupBackPressHandler()
         setupAnimator()
     }
 
@@ -71,15 +59,6 @@ class WelcomeActivity : AppCompatActivity() {
         binding.tvSkip.visibility = View.VISIBLE
 
         showMessage(1)
-    }
-
-    private fun setupObservers() {
-        viewModel.getSession().observe(this) { player ->
-            if (!player.isLogin) {
-                startActivity(Intent(this, PlayerInfoActivity::class.java))
-                finish()
-            }
-        }
     }
 
     private fun setupListeners() {
@@ -97,30 +76,12 @@ class WelcomeActivity : AppCompatActivity() {
         }
         binding.tvNext4.setOnClickListener {
             soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
-            goToMainActivity()
+            goToHardAActivity()
         }
         binding.tvSkip.setOnClickListener {
             soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
-            goToMainActivity()
+            goToHardAActivity()
         }
-    }
-
-    private fun setupBackPressHandler() {
-        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if (backPressedTime + backPressedInterval > System.currentTimeMillis()) {
-                    finishAffinity()
-                    exitProcess(0)
-                } else {
-                    Toast.makeText(
-                        this@WelcomeActivity,
-                        "Press once more to exit",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                backPressedTime = System.currentTimeMillis()
-            }
-        })
     }
 
     private fun setupAnimator() {
@@ -234,8 +195,8 @@ class WelcomeActivity : AppCompatActivity() {
         fadeOut.start()
     }
 
-    private fun goToMainActivity() {
-        startActivity(Intent(this, MainActivity::class.java))
+    private fun goToHardAActivity() {
+        startActivity(Intent(this, HardAActivity::class.java))
         finish()
     }
 

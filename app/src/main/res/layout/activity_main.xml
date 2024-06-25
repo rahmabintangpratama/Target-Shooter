@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ic_colorful_lamp"
         android:contentDescription="@string/colorful_lamp"
-        android:alpha="1"/>
+        android:alpha="1" />
 
     <ImageView
         android:id="@+id/ivNightCarnival"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ic_night_carnival_background"
         android:contentDescription="@string/night_carnival"
-        android:alpha="0.3"/>
+        android:alpha="0.3" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutBestScore"
@@ -105,7 +105,7 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             android:fontFamily="@font/jockey_one_regular"
-            android:text="@string/hi"/>
+            android:text="@string/hi" />
 
         <TextView
             android:id="@+id/tvNickname"
@@ -134,7 +134,7 @@
         android:textColor="@color/white"
         android:textAlignment="center"
         android:fontFamily="@font/jockey_one_regular"
-        android:text="@string/welcome"/>
+        android:text="@string/welcome" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivLogo"
@@ -159,7 +159,7 @@
         android:textColor="@color/white"
         android:textAlignment="center"
         android:fontFamily="@font/bungee_spice_regular"
-        android:text="@string/app_name"/>
+        android:text="@string/app_name" />
 
     <TextView
         android:id="@+id/tvDifficulty"
@@ -176,7 +176,7 @@
         android:textColor="@color/white"
         android:textAlignment="center"
         android:fontFamily="@font/jockey_one_regular"
-        android:text="@string/select_difficulty"/>
+        android:text="@string/select_difficulty" />
 
     <RadioGroup
         android:id="@+id/rgDifficulty"
@@ -196,7 +196,7 @@
             android:text="@string/easy"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:fontFamily="@font/jockey_one_regular"/>
+            android:fontFamily="@font/jockey_one_regular" />
 
         <RadioButton
             android:id="@+id/rbHard"
@@ -207,7 +207,7 @@
             android:text="@string/hard"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:fontFamily="@font/jockey_one_regular"/>
+            android:fontFamily="@font/jockey_one_regular" />
     </RadioGroup>
 
     <com.google.android.material.button.MaterialButton
@@ -223,7 +223,7 @@
         app:cornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rgDifficulty"/>
+        app:layout_constraintTop_toBottomOf="@id/rgDifficulty" />
 
     <TextView
         android:id="@+id/tvAbout"

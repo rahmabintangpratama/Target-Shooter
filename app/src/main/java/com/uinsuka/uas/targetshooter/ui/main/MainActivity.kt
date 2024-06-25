@@ -6,17 +6,17 @@ import android.content.Intent
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityMainBinding
 import com.uinsuka.uas.targetshooter.ui.ViewModelFactory
 import com.uinsuka.uas.targetshooter.ui.about.AboutActivity
-import com.uinsuka.uas.targetshooter.ui.easy.EasyAActivity
-import com.uinsuka.uas.targetshooter.ui.hard.HardAActivity
+import com.uinsuka.uas.targetshooter.ui.easy.EasyNarrationActivity
+import com.uinsuka.uas.targetshooter.ui.hard.HardNarrationActivity
 import com.uinsuka.uas.targetshooter.ui.info.PlayerInfoActivity
 import kotlin.system.exitProcess
 
@@ -39,26 +39,29 @@ class MainActivity : AppCompatActivity() {
 
         val rbScaleX = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.1f)
         val rbScaleY = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.1f)
-        val easyAnimator = ObjectAnimator.ofPropertyValuesHolder(binding.rbEasy, rbScaleX, rbScaleY).apply {
-            duration = 800
-            repeatCount = ObjectAnimator.INFINITE
-            repeatMode = ObjectAnimator.REVERSE
-        }
+        val easyAnimator =
+            ObjectAnimator.ofPropertyValuesHolder(binding.rbEasy, rbScaleX, rbScaleY).apply {
+                duration = 800
+                repeatCount = ObjectAnimator.INFINITE
+                repeatMode = ObjectAnimator.REVERSE
+            }
         easyAnimator.start()
-        val hardAnimator = ObjectAnimator.ofPropertyValuesHolder(binding.rbHard, rbScaleX, rbScaleY).apply {
-            duration = 800
-            repeatCount = ObjectAnimator.INFINITE
-            repeatMode = ObjectAnimator.REVERSE
-        }
+        val hardAnimator =
+            ObjectAnimator.ofPropertyValuesHolder(binding.rbHard, rbScaleX, rbScaleY).apply {
+                duration = 800
+                repeatCount = ObjectAnimator.INFINITE
+                repeatMode = ObjectAnimator.REVERSE
+            }
         hardAnimator.start()
 
         val scaleX = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.2f)
         val scaleY = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.2f)
-        val aboutAnimator = ObjectAnimator.ofPropertyValuesHolder(binding.tvAbout, scaleX, scaleY).apply {
-            duration = 800
-            repeatCount = ObjectAnimator.INFINITE
-            repeatMode = ObjectAnimator.REVERSE
-        }
+        val aboutAnimator =
+            ObjectAnimator.ofPropertyValuesHolder(binding.tvAbout, scaleX, scaleY).apply {
+                duration = 800
+                repeatCount = ObjectAnimator.INFINITE
+                repeatMode = ObjectAnimator.REVERSE
+            }
         aboutAnimator.start()
 
         viewModel.getSession().observe(this) { player ->
@@ -100,15 +103,21 @@ class MainActivity : AppCompatActivity() {
             when {
                 binding.rbEasy.isChecked -> {
                     soundPool.play(startSoundId, 1f, 1f, 1, 0, 1f)
-                    startActivity(Intent(this, EasyAActivity::class.java))
+                    startActivity(Intent(this, EasyNarrationActivity::class.java))
                 }
+
                 binding.rbHard.isChecked -> {
                     soundPool.play(startSoundId, 1f, 1f, 1, 0, 1f)
-                    startActivity(Intent(this, HardAActivity::class.java))
+                    startActivity(Intent(this, HardNarrationActivity::class.java))
                 }
+
                 else -> {
                     soundPool.play(startSoundId, 1f, 1f, 1, 0, 1f)
-                    Toast.makeText(this@MainActivity, "You have to choose the difficulty level", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@MainActivity,
+                        "You have to choose the difficulty level",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         }
@@ -124,7 +133,8 @@ class MainActivity : AppCompatActivity() {
                     finishAffinity()
                     exitProcess(0)
                 } else {
-                    Toast.makeText(this@MainActivity, "Press once more to exit", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, "Press once more to exit", Toast.LENGTH_SHORT)
+                        .show()
                 }
                 backPressedTime = System.currentTimeMillis()
             }

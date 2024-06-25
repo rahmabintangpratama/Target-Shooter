@@ -19,12 +19,15 @@ class ViewModelFactory(private val repository: PlayerRepository) :
             modelClass.isAssignableFrom(MainViewModel::class.java) -> {
                 MainViewModel(repository) as T
             }
+
             modelClass.isAssignableFrom(PlayerInfoViewModel::class.java) -> {
                 PlayerInfoViewModel(repository) as T
             }
+
             modelClass.isAssignableFrom(ResultViewModel::class.java) -> {
                 ResultViewModel(repository) as T
             }
+
             modelClass.isAssignableFrom(WelcomeViewModel::class.java) -> {
                 WelcomeViewModel(repository) as T
             }

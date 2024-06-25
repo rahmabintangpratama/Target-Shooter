@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ic_colorful_lamp"
         android:contentDescription="@string/colorful_lamp"
-        android:alpha="1"/>
+        android:alpha="1" />
 
     <ImageView
         android:id="@+id/ivNightCarnival"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ic_night_carnival_background"
         android:contentDescription="@string/night_carnival"
-        android:alpha="0.3"/>
+        android:alpha="0.3" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivLogo"
@@ -58,7 +58,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/light_orange"
-        android:fontFamily="@font/workbench_regular"/>
+        android:fontFamily="@font/workbench_regular" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/NicknameEditTextLayout"
@@ -88,7 +88,7 @@
             android:fontFamily="@font/jockey_one_regular"
             android:inputType="textPersonName"
             android:gravity="center"
-            tools:ignore="SpeakableTextPresentCheck"/>
+            tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
@@ -105,6 +105,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/NicknameEditTextLayout"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

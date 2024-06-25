@@ -55,7 +55,16 @@
     <string name="skip">Skip Intro ⨠⨠⨠</string>
     <string name="message_1">Hi, my name\'s Agus. I\'m the operator for the Target Shooter game at this night carnival. This game really grabs the attention of the visitors here.</string>
     <string name="message_2">You seem unsure about which game to play. Is this your first time here? Maybe you could try the Target Shooter game first. I\'m sure you\'ll like it.</string>
-    <string name="message_3">This game is pretty easy. You just need to hit the visible targets. The targets will pop up and disappear repeatedly. You need to stay focused to hit them.</string>
-    <string name="message_4">Here we have two game modes. There are Easy mode and Hard mode. In Easy mode, you just need to hit the targets as I mentioned earlier. However, in Hard mode, you have to be careful because the targets will move faster and there are also bombs that can reduce your points. Remember, for each target you hit, you will get one point, and for each bomb you hit, you will lose two points. So, be careful and have fun!</string>
+    <string name="message_3">This game is pretty easy. You just need to hit the targets you see. They will pop up and disappear repeatedly. Just stay focused to hit them.</string>
+    <string name="message_4">We\'ve got two game modes here: Easy and Hard. In Easy mode, you just hit the targets as I mentioned. But in Hard mode, be careful because the targets move faster and there are bombs that can reduce your points. Remember, each target hit gives you one point, but hitting a bomb will cost you two points. So, watch out and have fun!</string>
     <string name="lets_play">Let\'s Play ⨠⨠⨠</string>
+    <string name="easy_message_1">Oh, so you want to play in Easy mode?</string>
+    <string name="easy_message_2">This mode is super easy, even beginners can play it effortlessly. But I think you\'re more than just a beginner. Maybe you can try the Hard mode later.</string>
+    <string name="easy_message_3">Alright, if you still want to play Easy mode, let me remind you that you just need to hit the targets that pop up. They will appear and disappear repeatedly. Stay focused to hit them.</string>
+    <string name="easy_message_4">Alright then, go ahead and play. Don\'t forget to have fun because there\'s no point in playing if it\'s not enjoyable. Enjoy the game!</string>
+    <string name="skip_and_play">Skip and Play ⨠⨠⨠</string>
+    <string name="hard_message_1">Wow, looks like you\'re brave enough to try Hard mode!</string>
+    <string name="hard_message_2">This mode is pretty challenging for beginners. But I believe you\'re more than just a beginner. Are you sure you want to take on this challenge?</string>
+    <string name="hard_message_3">Alright, I respect your courage. Many visitors get challenged by this mode, but they often struggle with it. Let me remind you once more, in this mode, you need to be careful because the targets move faster, and there are bombs that can decrease your points.</string>
+    <string name="hard_message_4">Alright then, show me that you can handle it. But don\'t forget that this is just a game. So, make sure you enjoy it. Have fun!</string>
 </resources>

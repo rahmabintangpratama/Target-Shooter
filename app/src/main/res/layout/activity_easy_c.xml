@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ic_colorful_lamp"
         android:contentDescription="@string/colorful_lamp"
-        android:alpha="1"/>
+        android:alpha="1" />
 
     <ImageView
         android:id="@+id/ivNightCarnival"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ic_night_carnival_background"
         android:contentDescription="@string/night_carnival"
-        android:alpha="0.1"/>
+        android:alpha="0.1" />
 
     <LinearLayout
         android:id="@+id/linearLayoutStage"
@@ -49,7 +49,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:fontFamily="@font/bungee_spice_regular"
-            android:text="@string/stage_3"/>
+            android:text="@string/stage_3" />
     </LinearLayout>
 
     <LinearLayout
@@ -70,7 +70,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:fontFamily="@font/bungee_spice_regular"
-            android:text="@string/score"/>
+            android:text="@string/score" />
 
         <TextView
             android:id="@+id/tvScoreValue"
@@ -101,7 +101,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:fontFamily="@font/bungee_spice_regular"
-            android:text="@string/time_left"/>
+            android:text="@string/time_left" />
 
         <TextView
             android:id="@+id/tvTimeLeftValue"

@@ -3,13 +3,13 @@ package com.uinsuka.uas.targetshooter.ui.splash
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.uinsuka.uas.targetshooter.databinding.ActivitySplashBinding
 import com.uinsuka.uas.targetshooter.ui.welcome.WelcomeActivity
 import kotlin.system.exitProcess
@@ -42,7 +42,11 @@ class SplashActivity : AppCompatActivity() {
                     finishAffinity()
                     exitProcess(0)
                 } else {
-                    Toast.makeText(this@SplashActivity, "Press once more to exit", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@SplashActivity,
+                        "Press once more to exit",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
                 backPressedTime = System.currentTimeMillis()
             }

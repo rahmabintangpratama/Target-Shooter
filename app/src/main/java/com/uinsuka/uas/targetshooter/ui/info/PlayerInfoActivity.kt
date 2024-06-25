@@ -4,11 +4,11 @@ import android.content.Intent
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityPlayerInfoBinding
 import com.uinsuka.uas.targetshooter.ui.ViewModelFactory
@@ -79,7 +79,11 @@ class PlayerInfoActivity : AppCompatActivity() {
                     finishAffinity()
                     exitProcess(0)
                 } else {
-                    Toast.makeText(this@PlayerInfoActivity, "Press once more to exit", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@PlayerInfoActivity,
+                        "Press once more to exit",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
                 backPressedTime = System.currentTimeMillis()
             }
