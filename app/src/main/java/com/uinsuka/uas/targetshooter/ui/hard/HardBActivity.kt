@@ -155,7 +155,7 @@ class HardBActivity : AppCompatActivity() {
             }
         }
 
-        val randomDuration = Random.nextLong(300, 800)
+        val randomDuration = Random.nextLong(400, 800)
         handler.postDelayed({
             if (randomTarget.visibility == View.VISIBLE) {
                 randomTarget.visibility = View.GONE
