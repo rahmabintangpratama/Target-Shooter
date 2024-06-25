@@ -89,6 +89,13 @@ class MainActivity : AppCompatActivity() {
             mediaPlayer.start()
         }
 
+        binding.rbEasy.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+        }
+        binding.rbHard.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+        }
+
         binding.btnStart.setOnClickListener {
             when {
                 binding.rbEasy.isChecked -> {
