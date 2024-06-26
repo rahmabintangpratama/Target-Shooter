@@ -19,6 +19,7 @@ class HardNarrationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHardNarrationBinding
     private lateinit var soundPool: SoundPool
     private var clickSoundId: Int = 0
+    private var startSoundId: Int = 0
     private val animationDuration: Long = 1000
     private val transitionDelay: Long = 300
     private lateinit var mediaPlayer: MediaPlayer
@@ -37,6 +38,7 @@ class HardNarrationActivity : AppCompatActivity() {
             .setAudioAttributes(audioAttributes)
             .build()
         clickSoundId = soundPool.load(this, R.raw.click_button, 1)
+        startSoundId = soundPool.load(this, R.raw.start_button, 1)
 
         mediaPlayer = MediaPlayer.create(this, R.raw.intro)
         mediaPlayer.isLooping = true
@@ -78,12 +80,12 @@ class HardNarrationActivity : AppCompatActivity() {
             showMessage(4)
         }
         binding.tvNext4.setOnClickListener {
-            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            soundPool.play(startSoundId, 1f, 1f, 1, 0, 1f)
             disableNextButtons()
             goToHardAActivity()
         }
         binding.tvSkip.setOnClickListener {
-            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            soundPool.play(startSoundId, 1f, 1f, 1, 0, 1f)
             goToHardAActivity()
         }
     }
