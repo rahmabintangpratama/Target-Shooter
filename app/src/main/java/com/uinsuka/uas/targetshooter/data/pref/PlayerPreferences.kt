@@ -32,12 +32,6 @@ class PlayerPreferences private constructor(private val dataStore: DataStore<Pre
         }
     }
 
-    suspend fun logout() {
-        dataStore.edit { preferences ->
-            preferences.clear()
-        }
-    }
-
     suspend fun saveBestScore(score: Int) {
         dataStore.edit { preferences ->
             val currentBestScore = preferences[BEST_SCORE] ?: 0

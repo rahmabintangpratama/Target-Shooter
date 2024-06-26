@@ -16,10 +16,6 @@ class PlayerRepository private constructor(
         return playerPreferences.getSession()
     }
 
-    suspend fun logout() {
-        playerPreferences.logout()
-    }
-
     suspend fun saveBestScore(score: Int) {
         playerPreferences.saveBestScore(score)
     }
