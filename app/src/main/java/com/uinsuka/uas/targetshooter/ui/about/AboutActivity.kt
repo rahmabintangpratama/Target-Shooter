@@ -1,6 +1,8 @@
 package com.uinsuka.uas.targetshooter.ui.about
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.res.Configuration
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
@@ -10,6 +12,7 @@ import android.widget.ScrollView
 import androidx.appcompat.app.AppCompatActivity
 import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityAboutBinding
+import com.uinsuka.uas.targetshooter.settings.FontScaleSetting
 
 class AboutActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAboutBinding
@@ -21,6 +24,15 @@ class AboutActivity : AppCompatActivity() {
     private val scrollSpeed = 1
     private val scrollDelay = 10L
     private var isAutoScrolling = false
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(FontScaleSetting.updateBaseContextLocale(newBase))
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        FontScaleSetting.resetFontScale(this)
+    }
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {

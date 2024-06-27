@@ -1,6 +1,8 @@
 package com.uinsuka.uas.targetshooter.ui.info
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
@@ -11,6 +13,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityPlayerInfoBinding
+import com.uinsuka.uas.targetshooter.settings.FontScaleSetting
 import com.uinsuka.uas.targetshooter.ui.ViewModelFactory
 import com.uinsuka.uas.targetshooter.ui.custom.NicknameEditText
 import com.uinsuka.uas.targetshooter.ui.welcome.WelcomeActivity
@@ -27,6 +30,15 @@ class PlayerInfoActivity : AppCompatActivity() {
     private lateinit var soundPool: SoundPool
     private var clickSoundId: Int = 0
     private lateinit var mediaPlayer: MediaPlayer
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(FontScaleSetting.updateBaseContextLocale(newBase))
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        FontScaleSetting.resetFontScale(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

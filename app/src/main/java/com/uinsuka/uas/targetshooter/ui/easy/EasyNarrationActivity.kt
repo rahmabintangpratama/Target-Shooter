@@ -3,7 +3,9 @@ package com.uinsuka.uas.targetshooter.ui.easy
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
@@ -14,6 +16,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivityEasyNarrationBinding
+import com.uinsuka.uas.targetshooter.settings.FontScaleSetting
 
 class EasyNarrationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEasyNarrationBinding
@@ -23,6 +26,15 @@ class EasyNarrationActivity : AppCompatActivity() {
     private val animationDuration: Long = 1000
     private val transitionDelay: Long = 300
     private lateinit var mediaPlayer: MediaPlayer
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(FontScaleSetting.updateBaseContextLocale(newBase))
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        FontScaleSetting.resetFontScale(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

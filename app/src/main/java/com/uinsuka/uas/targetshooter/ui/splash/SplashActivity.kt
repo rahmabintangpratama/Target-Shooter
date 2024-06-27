@@ -1,7 +1,9 @@
 package com.uinsuka.uas.targetshooter.ui.splash
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -11,6 +13,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.uinsuka.uas.targetshooter.databinding.ActivitySplashBinding
+import com.uinsuka.uas.targetshooter.settings.FontScaleSetting
 import com.uinsuka.uas.targetshooter.ui.welcome.WelcomeActivity
 import kotlin.system.exitProcess
 
@@ -20,6 +23,15 @@ class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
     private var backPressedTime: Long = 0
     private val backPressedInterval: Long = 2000
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(FontScaleSetting.updateBaseContextLocale(newBase))
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        FontScaleSetting.resetFontScale(this)
+    }
 
     @SuppressLint("ObsoleteSdkInt")
     override fun onCreate(savedInstanceState: Bundle?) {
