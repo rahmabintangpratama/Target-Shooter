@@ -1,6 +1,12 @@
 # Target Shooter
 
-<img src="https://github.com/rahmabintangpratama/Target-Shooter/blob/main/app/src/main/res/mipmap-hdpi/ic_target_shooter.jpeg" alt="Game Icon" width="200"/>
+<h1 align="center">
+    <div align="center">
+        <div style="text-align:center">
+            <img src="https://github.com/rahmabintangpratama/Target-Shooter/blob/main/app/src/main/res/mipmap-hdpi/ic_target_shooter.jpeg" alt="Game Icon" width="300"/>
+        </div>
+    </div>
+</h1>
 
 Target Shooter is a casual arcade game set in a night carnival theme. Players aim to score points by tapping on targets that appear on the screen.
 
@@ -34,8 +40,14 @@ Target Shooter is a casual arcade game set in a night carnival theme. Players ai
 
 ## Screenshots
 
-<img src="https://github.com/rahmabintangpratama/Target-Shooter/assets/142522301/b5652b95-4550-428d-8fcb-85d64abb4c2b" alt="Main Menu" width="300"/>
-<img src="https://github.com/rahmabintangpratama/Target-Shooter/assets/142522301/cdf3d0f5-ace4-47b8-b189-fdd392adc977" alt="Gameplay" width="300"/>
+<h1 align="center">
+    <div align="center">
+        <div style="text-align:center">
+            <img src="https://github.com/rahmabintangpratama/Target-Shooter/assets/142522301/b5652b95-4550-428d-8fcb-85d64abb4c2b" alt="Main Menu" width="300"/>
+            <img src="https://github.com/rahmabintangpratama/Target-Shooter/assets/142522301/cdf3d0f5-ace4-47b8-b189-fdd392adc977" alt="Gameplay" width="300"/>
+        </div>
+    </div>
+</h1>
 
 ## Installation
 
