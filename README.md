@@ -72,7 +72,7 @@ Dr. Ir. Aulia Faqih Rifa'i, M.Kom. (198603062011011009)
 ## Links
 
 - [Teaser Video](https://youtube.com/shorts/gj3xfW0ApyA)
-- [Release APK](https://github.com/rahmabintangpratama/Target-Shooter/releases/tag/v1.0.0)
+- [Release APK](https://github.com/rahmabintangpratama/Target-Shooter/releases)
 
 ## License
 
