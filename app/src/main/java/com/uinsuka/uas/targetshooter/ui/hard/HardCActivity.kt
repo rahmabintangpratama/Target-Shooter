@@ -13,7 +13,6 @@ import android.os.Looper
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.activity.OnBackPressedCallback
@@ -203,15 +202,12 @@ class HardCActivity : AppCompatActivity() {
             soundPool.play(bombSoundId, 1f, 1f, 1, 0, 1f)
 
             if (vibrator.hasVibrator()) {
-                Log.d("HardAActivity", "Attempting to vibrate")
                 vibrator.vibrate(
                     VibrationEffect.createOneShot(
                         1001,
                         VibrationEffect.DEFAULT_AMPLITUDE
                     )
                 )
-            } else {
-                Log.d("HardAActivity", "Device does not support vibration")
             }
         } else {
             target.setImageResource(R.drawable.ic_target_broken)
@@ -283,15 +279,15 @@ class HardCActivity : AppCompatActivity() {
 
     private fun showExitDialog() {
         AlertDialog.Builder(this)
-            .setTitle("End Current Game")
-            .setMessage("Are you sure you want to end the game?\nYour progress will not be saved.")
-            .setPositiveButton("Yes") { _, _ ->
+            .setTitle(getString(R.string.exit_dialog_title))
+            .setMessage(getString(R.string.exit_dialog_message))
+            .setPositiveButton(getString(R.string.yes)) { _, _ ->
                 val intent = Intent(this, MainActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
                 finish()
             }
-            .setNegativeButton("No", null)
+            .setNegativeButton(getString(R.string.no), null)
             .show()
     }
 

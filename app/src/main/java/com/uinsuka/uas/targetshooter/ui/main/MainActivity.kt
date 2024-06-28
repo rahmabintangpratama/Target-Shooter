@@ -127,7 +127,7 @@ class MainActivity : AppCompatActivity() {
                     soundPool.play(startSoundId, 1f, 1f, 1, 0, 1f)
                     Toast.makeText(
                         this@MainActivity,
-                        "You have to choose the difficulty level",
+                        getString(R.string.choose_difficulty),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -145,7 +145,7 @@ class MainActivity : AppCompatActivity() {
                     finishAffinity()
                     exitProcess(0)
                 } else {
-                    Toast.makeText(this@MainActivity, "Press once more to exit", Toast.LENGTH_SHORT)
+                    Toast.makeText(this@MainActivity, getString(R.string.exit), Toast.LENGTH_SHORT)
                         .show()
                 }
                 backPressedTime = System.currentTimeMillis()

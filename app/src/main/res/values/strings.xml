@@ -67,4 +67,12 @@
     <string name="hard_message_2">This mode is pretty challenging for beginners. But I believe you\'re more than just a beginner. Are you sure you want to take on this challenge?</string>
     <string name="hard_message_3">Alright, I respect your courage. Many visitors get challenged by this mode, but they often struggle with it. Let me remind you once more, in this mode, you need to be careful because the targets move faster, and there are bombs that can decrease your points.</string>
     <string name="hard_message_4">Alright then, show me that you can handle it. But don\'t forget that this is just a game. So, make sure you enjoy it. Have fun!</string>
+    <string name="choose_difficulty">You have to choose the difficulty level</string>
+    <string name="exit">Press once more to exit</string>
+    <string name="exit_dialog_title">End Current Game</string>
+    <string name="exit_dialog_message">Are you sure you want to end the game?\nYour progress will not be saved.</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="unsupported_android_dialog_title">Unsupported Android Version</string>
+    <string name="unsupported_android_dialog_message">This game only supports Android 9 (Pie) and above.\nThe application will close automatically in 5 seconds.</string>
 </resources>

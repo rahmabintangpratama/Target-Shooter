@@ -78,7 +78,7 @@ class PlayerInfoActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(
                         this@PlayerInfoActivity,
-                        "Nickname cannot be empty",
+                        getString(R.string.error_empty_nickname),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -93,7 +93,7 @@ class PlayerInfoActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(
                         this@PlayerInfoActivity,
-                        "Press once more to exit",
+                        getString(R.string.exit),
                         Toast.LENGTH_SHORT
                     ).show()
                 }

@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.uinsuka.uas.targetshooter.R
 import com.uinsuka.uas.targetshooter.databinding.ActivitySplashBinding
 import com.uinsuka.uas.targetshooter.settings.FontScaleSetting
 import com.uinsuka.uas.targetshooter.ui.welcome.WelcomeActivity
@@ -56,7 +57,7 @@ class SplashActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(
                         this@SplashActivity,
-                        "Press once more to exit",
+                        getString(R.string.exit),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -67,8 +68,8 @@ class SplashActivity : AppCompatActivity() {
 
     private fun showUnsupportedVersionDialog() {
         val dialog = AlertDialog.Builder(this)
-            .setTitle("Unsupported Android Version")
-            .setMessage("This game only supports Android 9 (Pie) and above.\nThe application will close automatically in 5 seconds.")
+            .setTitle(getString(R.string.unsupported_android_dialog_title))
+            .setMessage(getString(R.string.unsupported_android_dialog_message))
             .setCancelable(false)
             .create()
 
@@ -89,7 +90,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private companion object {
-        private const val SPLASH_DELAY = 2500L
+        private const val SPLASH_DELAY = 3000L
         private const val CLOSE_DELAY = 5000L
     }
 }

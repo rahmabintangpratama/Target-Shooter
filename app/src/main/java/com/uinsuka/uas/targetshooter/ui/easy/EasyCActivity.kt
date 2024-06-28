@@ -233,15 +233,15 @@ class EasyCActivity : AppCompatActivity() {
 
     private fun showExitDialog() {
         AlertDialog.Builder(this)
-            .setTitle("End Current Game")
-            .setMessage("Are you sure you want to end the game?\nYour progress will not be saved.")
-            .setPositiveButton("Yes") { _, _ ->
+            .setTitle(getString(R.string.exit_dialog_title))
+            .setMessage(getString(R.string.exit_dialog_message))
+            .setPositiveButton(getString(R.string.yes)) { _, _ ->
                 val intent = Intent(this, MainActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
                 finish()
             }
-            .setNegativeButton("No", null)
+            .setNegativeButton(getString(R.string.no), null)
             .show()
     }
 

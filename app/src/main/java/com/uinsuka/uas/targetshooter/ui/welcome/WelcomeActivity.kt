@@ -147,7 +147,7 @@ class WelcomeActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(
                         this@WelcomeActivity,
-                        "Press once more to exit",
+                        getString(R.string.exit),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
