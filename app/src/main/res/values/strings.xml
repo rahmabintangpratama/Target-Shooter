@@ -75,4 +75,7 @@
     <string name="no">No</string>
     <string name="unsupported_android_dialog_title">Unsupported Android Version</string>
     <string name="unsupported_android_dialog_message">This game only supports Android 9 (Pie) and above.\nThe application will close automatically in 5 seconds.</string>
+    <string name="indra_role">Visual and Audio Editor</string>
+    <string name="bintang_role">Programmer</string>
+    <string name="role_ghibran">Assets Creator</string>
 </resources>
