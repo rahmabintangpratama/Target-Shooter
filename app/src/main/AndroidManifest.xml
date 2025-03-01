@@ -16,6 +16,11 @@
         android:theme="@style/Theme.TargetShooter"
         tools:targetApi="31">
         <activity
+            android:name=".ui.change.ChangeNameActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
             android:name=".ui.hard.HardNarrationActivity"
             android:exported="false"
             android:screenOrientation="portrait"

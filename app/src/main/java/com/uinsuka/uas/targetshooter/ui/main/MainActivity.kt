@@ -18,6 +18,7 @@ import com.uinsuka.uas.targetshooter.databinding.ActivityMainBinding
 import com.uinsuka.uas.targetshooter.settings.FontScaleSetting
 import com.uinsuka.uas.targetshooter.ui.ViewModelFactory
 import com.uinsuka.uas.targetshooter.ui.about.AboutActivity
+import com.uinsuka.uas.targetshooter.ui.change.ChangeNameActivity
 import com.uinsuka.uas.targetshooter.ui.easy.EasyNarrationActivity
 import com.uinsuka.uas.targetshooter.ui.hard.HardNarrationActivity
 import com.uinsuka.uas.targetshooter.ui.info.PlayerInfoActivity
@@ -49,17 +50,24 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val rbScaleX = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.1f)
-        val rbScaleY = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.1f)
+        val buttonScaleX = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.1f)
+        val buttonScaleY = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.1f)
+        val nicknameAnimator =
+            ObjectAnimator.ofPropertyValuesHolder(binding.tvNickname, buttonScaleX, buttonScaleY).apply {
+                duration = 800
+                repeatCount = ObjectAnimator.INFINITE
+                repeatMode = ObjectAnimator.REVERSE
+            }
+        nicknameAnimator.start()
         val easyAnimator =
-            ObjectAnimator.ofPropertyValuesHolder(binding.rbEasy, rbScaleX, rbScaleY).apply {
+            ObjectAnimator.ofPropertyValuesHolder(binding.rbEasy, buttonScaleX, buttonScaleY).apply {
                 duration = 800
                 repeatCount = ObjectAnimator.INFINITE
                 repeatMode = ObjectAnimator.REVERSE
             }
         easyAnimator.start()
         val hardAnimator =
-            ObjectAnimator.ofPropertyValuesHolder(binding.rbHard, rbScaleX, rbScaleY).apply {
+            ObjectAnimator.ofPropertyValuesHolder(binding.rbHard, buttonScaleX, buttonScaleY).apply {
                 duration = 800
                 repeatCount = ObjectAnimator.INFINITE
                 repeatMode = ObjectAnimator.REVERSE
@@ -102,6 +110,12 @@ class MainActivity : AppCompatActivity() {
 
         if (!mediaPlayer.isPlaying) {
             mediaPlayer.start()
+        }
+
+        binding.tvNickname.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            val intent = Intent(this, ChangeNameActivity::class.java)
+            startActivity(intent)
         }
 
         binding.rbEasy.setOnClickListener {

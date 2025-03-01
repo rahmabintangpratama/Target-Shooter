@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.uinsuka.uas.targetshooter.data.PlayerRepository
 import com.uinsuka.uas.targetshooter.di.Injection
+import com.uinsuka.uas.targetshooter.ui.change.ChangeNameViewModel
 import com.uinsuka.uas.targetshooter.ui.info.PlayerInfoViewModel
 import com.uinsuka.uas.targetshooter.ui.main.MainViewModel
 import com.uinsuka.uas.targetshooter.ui.result.ResultViewModel
@@ -22,6 +23,10 @@ class ViewModelFactory(private val repository: PlayerRepository) :
 
             modelClass.isAssignableFrom(PlayerInfoViewModel::class.java) -> {
                 PlayerInfoViewModel(repository) as T
+            }
+
+            modelClass.isAssignableFrom(ChangeNameViewModel::class.java) -> {
+                ChangeNameViewModel(repository) as T
             }
 
             modelClass.isAssignableFrom(ResultViewModel::class.java) -> {
