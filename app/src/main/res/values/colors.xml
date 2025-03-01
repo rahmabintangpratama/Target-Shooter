@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="midnight_blue">#191970</color>
+    <color name="prussian_blue">#003366</color>
+    <color name="sodalite_blue">#2C447B</color>
+    <color name="dark_orange">#DD6B2C</color>
+    <color name="light_orange">#FF9933</color>
+    <color name="red">#FF0000</color>
+</resources>
